@@ -1,18 +1,11 @@
+<script setup>
+import { useCounterStore } from '@/stores/counter'
+const store = useCounterStore()
+const counter = store.count
+</script>
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h4>This is home page.</h4>
+    <h5>Counter Value: {{ counter }}</h5>
   </div>
 </template>
-
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
-</script>

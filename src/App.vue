@@ -1,3 +1,8 @@
+<script setup>
+import { useAuthUser } from '@/stores/auth'
+const authUser = useAuthUser()
+console.log(authUser.isAuthenticate)
+</script>
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
