@@ -1,17 +1,19 @@
 <script setup>
 import { useCounterStore } from '@/stores/counter'
 const store = useCounterStore()
-const counter = store.count
+
 function increment () {
-  counter.value++
+  store.count++
 }
 function decrement () {
-  counter.value--
+  store.count--
 }
 </script>
 <template>
+  <div style="width: 220px; margin: 0 auto; display: flex; justify-content: space-around;">
     <button @click="increment">+</button>
-    <h5>Counter Value: {{ counter }}</h5>
-    <h6>Digit Length {{ store.countDigitLength }}</h6>
+    <h5>Counter Value: {{ store.count }}</h5>
     <button @click="decrement">-</button>
+  </div>
+    <h6>Digit Length {{ store.countDigitLength }}</h6>
 </template>

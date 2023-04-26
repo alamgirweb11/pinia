@@ -1,12 +1,16 @@
 <script setup>
 import { useAuthUser } from '@/stores/auth'
 const authUser = useAuthUser()
-console.log(authUser.isAuthenticate)
+
+function logout () {
+  authUser.isAuthenticate = false
+}
 </script>
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
+    <button @click="logout" style="margin-left: 20px">Logout</button>
   </nav>
   <router-view/>
 </template>

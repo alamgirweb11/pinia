@@ -2,6 +2,10 @@ import { defineStore } from 'pinia'
 
 export const useAuthUser = defineStore('authUser', {
   state: () => ({
-    isAuthenticate: false
+    isAuthenticate: true,
+    user: {
+      name: 'Abir Ahmed',
+      email: 'abir@gmail.com'
+    }
   })
 })
