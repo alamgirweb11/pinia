@@ -5,12 +5,17 @@ const authUser = useAuthUser()
 function logout () {
   authUser.isAuthenticate = false
 }
+
+function login () {
+  authUser.$reset()
+}
 </script>
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-    <button @click="logout" style="margin-left: 20px">Logout</button>
+    <button v-if="authUser.isAuthenticate" @click="logout" style="margin-left: 20px">Logout</button>
+    <button v-else @click="login" style="margin-left: 20px">Login</button>
   </nav>
   <router-view/>
 </template>
