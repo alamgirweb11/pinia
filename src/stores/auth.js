@@ -7,5 +7,14 @@ export const useAuthUser = defineStore('authUser', {
       name: 'Abir Ahmed',
       email: 'abir@gmail.com'
     }
-  })
+  }),
+  actions: {
+    logout () {
+      this.isAuthenticate = false
+    },
+
+    login () {
+      this.$reset()
+    }
+  }
 })
